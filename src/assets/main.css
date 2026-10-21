@@ -1,0 +1,9 @@
+@import './spacing.css';
+@import './layout.css';
+
+body {
+  margin: 0;
+  background: var(--p-background-color);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: var(--p-text-color);
+}
