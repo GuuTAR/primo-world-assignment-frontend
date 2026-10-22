@@ -9,55 +9,60 @@ import { useEncryptStore } from '@/stores/encrypt'
 import FlexStack from '@/components/core/FlexStack/FlexStack.vue'
 import TextVariant from '@/components/core/TextVariant/TextVariant.vue'
 
-import EncryptFormSection from '@/views/Encrypt/section/EncryptForm/EncryptFormSection.vue'
-import EncryptResultSection from '@/views/Encrypt/section/EncryptResult/EncryptResultSection.vue'
+import DecryptFormSection from '@/views/Rsa/section/DecryptForm/DecryptFormSection.vue'
+import DecryptResultSection from '@/views/Rsa/section/DecryptResult/DecryptResultSection.vue'
+import EncryptFormSection from '@/views/Rsa/section/EncryptForm/EncryptFormSection.vue'
+import EncryptResultSection from '@/views/Rsa/section/EncryptResult/EncryptResultSection.vue'
 
 import * as Languages from './lang'
 
 const { language } = storeToRefs(useAppDataStore())
-const { resetResult } = useEncryptStore()
+const { resetEncryptResult, resetDecryptResult } = useEncryptStore()
 
 onUnmounted(() => {
-  resetResult()
+  resetEncryptResult()
+  resetDecryptResult()
 })
 </script>
 
 <template>
-  <main class="encrypt-page">
-    <FlexStack class="encrypt-page__content">
-      <header class="encrypt-page__header">
-        <TextVariant variant="h5" :bold="true" class="encrypt-page__title">
+  <main class="rsa-page">
+    <FlexStack class="rsa-page__content">
+      <header class="rsa-page__header">
+        <TextVariant variant="h5" :bold="true" class="rsa-page__title">
           {{ Languages.TITLE[language] }}
         </TextVariant>
-        <TextVariant variant="body2" class="encrypt-page__description">
+        <TextVariant variant="body2" class="rsa-page__description">
           {{ Languages.DESCRIPTION[language] }}
         </TextVariant>
       </header>
 
       <EncryptFormSection />
       <EncryptResultSection />
+      <DecryptFormSection />
+      <DecryptResultSection />
     </FlexStack>
   </main>
 </template>
 
 <style scoped>
-.encrypt-page {
+.rsa-page {
   padding: var(--app-spacing-6);
 }
 
-.encrypt-page__content {
+.rsa-page__content {
   flex-direction: column;
   gap: var(--app-spacing-4);
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
 
-.encrypt-page__description {
+.rsa-page__description {
   color: var(--p-text-muted-color);
 }
 
 @media (max-width: 600px) {
-  .encrypt-page {
+  .rsa-page {
     padding: var(--app-spacing-4);
   }
 }

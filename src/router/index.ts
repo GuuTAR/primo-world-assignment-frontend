@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import { useAuthStore } from '@/stores/auth'
 
-import EncryptView from '@/views/Encrypt/EncryptPage.vue'
 import LoginView from '@/views/Login/LoginPage.vue'
+import RsaView from '@/views/Rsa/RsaPage.vue'
 import TodoView from '@/views/Todo/TodoPage.vue'
 
 const router = createRouter({
@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: EncryptView,
+      component: RsaView,
       meta: { showMenu: true, requiresAuth: true },
     },
     {

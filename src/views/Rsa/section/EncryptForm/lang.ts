@@ -1,5 +1,10 @@
 import { LANGUAGE } from '@/enum/global'
 
+export const FORM_TITLE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Encrypt',
+  [LANGUAGE.THAI]: 'เข้ารหัส',
+}
+
 export const PAYLOAD_LABEL: Record<LANGUAGE, string> = {
   [LANGUAGE.ENGLISH]: 'Payload',
   [LANGUAGE.THAI]: 'ข้อมูล',

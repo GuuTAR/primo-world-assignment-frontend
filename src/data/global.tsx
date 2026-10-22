@@ -12,8 +12,8 @@ export const MOBILE_BREAKPOINT: number = 600
 export const MENU_ITEMS: { label: Record<LANGUAGE, string>; routeName: string; icon: string }[] = [
   {
     label: {
-      [LANGUAGE.ENGLISH]: 'Encryption',
-      [LANGUAGE.THAI]: 'เข้ารหัสข้อมูล',
+      [LANGUAGE.ENGLISH]: 'Encrypt/Decrypt',
+      [LANGUAGE.THAI]: 'เข้ารหัส/ถอดรหัส',
     },
     routeName: 'home',
     icon: 'pi pi-lock',

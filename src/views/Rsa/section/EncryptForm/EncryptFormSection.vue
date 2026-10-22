@@ -16,14 +16,16 @@ import * as Languages from './lang'
 
 const { language } = storeToRefs(useAppDataStore())
 const encryptStore = useEncryptStore()
-const { result, isEncrypting } = storeToRefs(encryptStore)
-const { encryptPayload, resetResult } = encryptStore
+const { encryptResult, isEncrypting } = storeToRefs(encryptStore)
+const { encryptPayload, resetEncryptResult } = encryptStore
 
 const payload = ref('')
 
 const isPayloadTooLong = computed(() => payload.value.length > PAYLOAD_MAX_LENGTH)
 const isEncryptDisabled = computed(() => isPayloadTooLong.value || isEncrypting.value)
-const isClearDisabled = computed(() => (!payload.value && !result.value) || isEncrypting.value)
+const isClearDisabled = computed(
+  () => (!payload.value && !encryptResult.value) || isEncrypting.value,
+)
 
 async function handleEncrypt(): Promise<void> {
   if (isEncryptDisabled.value) return
@@ -32,15 +34,18 @@ async function handleEncrypt(): Promise<void> {
 
 function handleClear(): void {
   payload.value = ''
-  resetResult()
+  resetEncryptResult()
 }
 
 const PAYLOAD_MAX_LENGTH = 2000
 </script>
 
 <template>
-  <FlexStack class="encrypt-page__form-section">
-    <label for="encrypt-payload" class="encrypt-page__form-label">
+  <FlexStack class="rsa-page__form-section">
+    <TextVariant variant="h6" class="rsa-page__form-title">
+      {{ Languages.FORM_TITLE[language] }}
+    </TextVariant>
+    <label for="encrypt-payload" class="rsa-page__form-label">
       <TextVariant variant="body2" :bold="true">
         {{ Languages.PAYLOAD_LABEL[language] }}
       </TextVariant>
@@ -57,25 +62,25 @@ const PAYLOAD_MAX_LENGTH = 2000
       fluid
       @keydown.ctrl.enter="handleEncrypt"
       @keydown.meta.enter="handleEncrypt"
-      class="encrypt-page__form-input"
+      class="rsa-page__form-input"
     />
-    <FlexStack class="encrypt-page__form-footer">
+    <FlexStack class="rsa-page__form-footer">
       <TextVariant
         id="encrypt-payload-count"
         variant="caption"
         aria-live="polite"
-        class="encrypt-page__form-count"
+        class="rsa-page__form-count"
       >
         {{ payload.length }} / {{ PAYLOAD_MAX_LENGTH }}
       </TextVariant>
-      <FlexStack class="encrypt-page__form-actions">
+      <FlexStack class="rsa-page__form-actions">
         <Button
           :label="Languages.CLEAR[language]"
           :disabled="isClearDisabled"
           severity="secondary"
           variant="text"
           @click="handleClear"
-          class="encrypt-page__form-clear-button"
+          class="rsa-page__form-clear-button"
         />
         <Button
           :label="Languages.ENCRYPT[language]"
@@ -83,7 +88,7 @@ const PAYLOAD_MAX_LENGTH = 2000
           :loading="isEncrypting"
           icon="pi pi-lock"
           @click="handleEncrypt"
-          class="encrypt-page__form-encrypt-button"
+          class="rsa-page__form-encrypt-button"
         />
       </FlexStack>
     </FlexStack>
@@ -91,7 +96,7 @@ const PAYLOAD_MAX_LENGTH = 2000
 </template>
 
 <style scoped>
-.encrypt-page__form-section {
+.rsa-page__form-section {
   flex-direction: column;
   gap: var(--app-spacing-3);
   padding: var(--app-spacing-5);
@@ -100,22 +105,22 @@ const PAYLOAD_MAX_LENGTH = 2000
   box-shadow: 0 1px 2px rgb(11 27 59 / 4%);
 }
 
-.encrypt-page__form-input {
+.rsa-page__form-input {
   resize: vertical;
 }
 
-.encrypt-page__form-footer {
+.rsa-page__form-footer {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: var(--app-spacing-3);
 }
 
-.encrypt-page__form-count {
+.rsa-page__form-count {
   color: var(--p-text-muted-color);
 }
 
-.encrypt-page__form-actions {
+.rsa-page__form-actions {
   gap: var(--app-spacing-2);
 }
 </style>
