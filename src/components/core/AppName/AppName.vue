@@ -41,8 +41,8 @@ const { language } = storeToRefs(useAppDataStore())
 .app-name__icon {
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 50%;
   background: var(--p-primary-500);
   color: var(--p-primary-0);
