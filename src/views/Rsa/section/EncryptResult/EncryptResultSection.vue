@@ -15,23 +15,23 @@ import * as Languages from './lang'
 
 const { language } = storeToRefs(useAppDataStore())
 const encryptStore = useEncryptStore()
-const { result } = storeToRefs(encryptStore)
+const { encryptResult } = storeToRefs(encryptStore)
 const { copyToClipboard } = encryptStore
 
 const resultItems = computed(() =>
-  result.value
+  encryptResult.value
     ? [
         {
           key: 'data1',
           label: Languages.DATA1_LABEL[language.value],
           description: Languages.DATA1_DESCRIPTION[language.value],
-          value: result.value.data1,
+          value: encryptResult.value.data1,
         },
         {
           key: 'data2',
           label: Languages.DATA2_LABEL[language.value],
           description: Languages.DATA2_DESCRIPTION[language.value],
-          value: result.value.data2,
+          value: encryptResult.value.data2,
         },
       ]
     : [],
@@ -39,19 +39,19 @@ const resultItems = computed(() =>
 </script>
 
 <template>
-  <FlexStack class="encrypt-page__result-section">
-    <TextVariant variant="h6" class="encrypt-page__result-title">
+  <FlexStack class="rsa-page__result-section">
+    <TextVariant variant="h6" class="rsa-page__result-title">
       {{ Languages.RESULT_TITLE[language] }}
     </TextVariant>
 
-    <ul v-if="resultItems.length > 0" class="encrypt-page__result-list">
-      <li v-for="item in resultItems" :key="item.key" class="encrypt-page__result-item">
-        <FlexStack class="encrypt-page__result-item-header">
-          <FlexStack class="encrypt-page__result-item-heading">
-            <TextVariant variant="body2" :bold="true" class="encrypt-page__result-item-label">
+    <ul v-if="resultItems.length > 0" class="rsa-page__result-list">
+      <li v-for="item in resultItems" :key="item.key" class="rsa-page__result-item">
+        <FlexStack class="rsa-page__result-item-header">
+          <FlexStack class="rsa-page__result-item-heading">
+            <TextVariant variant="body2" :bold="true" class="rsa-page__result-item-label">
               {{ item.label }}
             </TextVariant>
-            <TextVariant variant="caption" class="encrypt-page__result-item-description">
+            <TextVariant variant="caption" class="rsa-page__result-item-description">
               {{ item.description }}
             </TextVariant>
           </FlexStack>
@@ -63,18 +63,18 @@ const resultItems = computed(() =>
             variant="text"
             size="small"
             @click="copyToClipboard(item.value)"
-            class="encrypt-page__result-item-copy-button"
+            class="rsa-page__result-item-copy-button"
           />
         </FlexStack>
-        <code class="encrypt-page__result-item-code">{{ item.value }}</code>
+        <code class="rsa-page__result-item-code">{{ item.value }}</code>
       </li>
     </ul>
 
-    <FlexStack v-else class="encrypt-page__result-empty">
-      <TextVariant variant="body2" :bold="true" class="encrypt-page__result-empty-title">
+    <FlexStack v-else class="rsa-page__result-empty">
+      <TextVariant variant="body2" :bold="true" class="rsa-page__result-empty-title">
         {{ Languages.EMPTY_TITLE[language] }}
       </TextVariant>
-      <TextVariant variant="caption" class="encrypt-page__result-empty-description">
+      <TextVariant variant="caption" class="rsa-page__result-empty-description">
         {{ Languages.EMPTY_DESCRIPTION[language] }}
       </TextVariant>
     </FlexStack>
@@ -82,7 +82,7 @@ const resultItems = computed(() =>
 </template>
 
 <style scoped>
-.encrypt-page__result-section {
+.rsa-page__result-section {
   flex-direction: column;
   gap: var(--app-spacing-4);
   padding: var(--app-spacing-5);
@@ -91,7 +91,7 @@ const resultItems = computed(() =>
   box-shadow: 0 1px 2px rgb(11 27 59 / 4%);
 }
 
-.encrypt-page__result-list {
+.rsa-page__result-list {
   display: flex;
   flex-direction: column;
   gap: var(--app-spacing-4);
@@ -100,28 +100,28 @@ const resultItems = computed(() =>
   list-style: none;
 }
 
-.encrypt-page__result-item {
+.rsa-page__result-item {
   display: flex;
   flex-direction: column;
   gap: var(--app-spacing-2);
 }
 
-.encrypt-page__result-item-header {
+.rsa-page__result-item-header {
   justify-content: space-between;
   align-items: center;
   gap: var(--app-spacing-2);
 }
 
-.encrypt-page__result-item-heading {
+.rsa-page__result-item-heading {
   flex-direction: column;
   min-width: 0;
 }
 
-.encrypt-page__result-item-description {
+.rsa-page__result-item-description {
   color: var(--p-text-muted-color);
 }
 
-.encrypt-page__result-item-code {
+.rsa-page__result-item-code {
   display: block;
   padding: var(--app-spacing-3);
   border-radius: 12px;
@@ -133,12 +133,12 @@ const resultItems = computed(() =>
   white-space: pre-wrap;
 }
 
-.encrypt-page__result-empty {
+.rsa-page__result-empty {
   flex-direction: column;
   gap: var(--app-spacing-1);
 }
 
-.encrypt-page__result-empty-description {
+.rsa-page__result-empty-description {
   color: var(--p-text-muted-color);
 }
 </style>
