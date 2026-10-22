@@ -1,20 +1,20 @@
 import { LANGUAGE } from '@/enum/global'
 
 export const SHORT_SUMMARY: Record<LANGUAGE, string> = {
-  [LANGUAGE.ENGLISH]: 'Note your pending actions',
-  [LANGUAGE.THAI]: 'จดบันทึกสิ่งที่ต้องทำของคุณ',
+  [LANGUAGE.ENGLISH]: 'Interview Assignment for Fullstack Developer',
+  [LANGUAGE.THAI]: 'โจทย์สัมภาษณ์สำหรับตำแหน่ง Fullstack Developer',
 }
 
 export const WELCOME_MESSAGE: Record<LANGUAGE, string> = {
-  [LANGUAGE.ENGLISH]: 'Welcome back to your todo list.',
-  [LANGUAGE.THAI]: 'ยินดีต้อนรับกลับสู่รายการสิ่งที่ต้องทำของคุณ',
+  [LANGUAGE.ENGLISH]: 'Primo World assignment',
+  [LANGUAGE.THAI]: 'จทย์ของ Primo World',
 }
 
 export const DESCRIPTION: Record<LANGUAGE, string> = {
   [LANGUAGE.ENGLISH]:
-    'Note your pending actions, filter what is active or completed, and clear finished tasks when you are done.',
+    'Encrypt a payload with AES and RSA and decrypt it back, then merge three sorted collections into one list sorted from min to max.',
   [LANGUAGE.THAI]:
-    'จดบันทึกสิ่งที่ต้องทำของคุณ กรองสิ่งที่ยังทำอยู่หรือเสร็จแล้ว และเคลียร์งานที่เสร็จสิ้นเมื่อคุณทำเสร็จแล้ว',
+    'เข้ารหัสข้อมูลด้วย AES และ RSA แล้วถอดรหัสกลับ จากนั้นรวมชุดข้อมูลที่เรียงลำดับแล้วสามชุด เป็นรายการเดียวที่เรียงจากน้อยไปมาก',
 }
 
 export const SIGN_IN: Record<LANGUAGE, string> = {
@@ -33,6 +33,6 @@ export const OR: Record<LANGUAGE, string> = {
 }
 
 export const PLAY_AS_DEMO_USER: Record<LANGUAGE, string> = {
-  [LANGUAGE.ENGLISH]: 'Play as Demo user',
-  [LANGUAGE.THAI]: 'เข้าสู่ระบบด้วยผู้ใช้ตัวอย่าง',
+  [LANGUAGE.ENGLISH]: 'Go to assignment ',
+  [LANGUAGE.THAI]: 'เข้าดูโจทย์',
 }

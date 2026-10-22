@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import Button from 'primevue/button'
-import Divider from 'primevue/divider'
-
-import googleIcon from '@/assets/google.svg'
 
 import { DEFAULT_LANGUAGE } from '@/data/user'
 
@@ -16,7 +13,7 @@ import TextVariant from '@/components/core/TextVariant/TextVariant.vue'
 import * as Languages from './lang'
 
 const { isDesktop } = useBreakpoint()
-const { isLoading, loginGoogle, loginDemo } = useAuth()
+const { isLoading, loginDemo } = useAuth()
 </script>
 
 <template>
@@ -41,21 +38,6 @@ const { isLoading, loginGoogle, loginDemo } = useAuth()
             {{ Languages.SIGN_IN[DEFAULT_LANGUAGE] }}
           </TextVariant>
         </FlexStack>
-
-        <Button
-          :disabled="isLoading"
-          variant="outlined"
-          fluid
-          @click="loginGoogle"
-          class="login-page__google"
-        >
-          <img :src="googleIcon" width="24" height="24" alt="" />
-          <span>{{ Languages.CONTINUE_WITH_GOOGLE[DEFAULT_LANGUAGE] }}</span>
-        </Button>
-
-        <Divider align="center" class="login-page__divider">{{
-          Languages.OR[DEFAULT_LANGUAGE]
-        }}</Divider>
 
         <Button
           :label="Languages.PLAY_AS_DEMO_USER[DEFAULT_LANGUAGE]"
@@ -116,18 +98,5 @@ const { isLoading, loginGoogle, loginDemo } = useAuth()
 .login-page__brand {
   align-items: center;
   gap: var(--app-spacing-2);
-}
-
-.login-page__google {
-  gap: var(--app-spacing-2);
-}
-
-.login-page__divider {
-  margin: 0;
-  font-size: 14px;
-}
-
-.login-page__divider :deep(.p-divider-content) {
-  background: var(--p-primary-0);
 }
 </style>

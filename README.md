@@ -1,27 +1,25 @@
-# vue-primevue-google-auth
+# primo-world-assignment-frontend
 
-Vue Project template for reusable
+UI Project for Primo World Assignment
 
-## Recommended IDE Setup
+## Environment
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Copy `.env.template` to `.env` and fill in the values. Real environment variables take precedence over `.env`.
 
-## Recommended Browser Setup
+```bash
+$ cp .env.template .env
+```
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+| Variable | Required | Description |
+| --- | --- | --- |
+| `VITE_API_BASE_URL` | yes | Base URL of the backend API, e.g. `http://localhost:8000`. Used by `POST /get-encrypt-data`, `POST /get-decrypt-data` and `POST /merge` |
+| `VITE_PRIMEUI_LICENSE` | yes | PrimeUI license key, passed to PrimeVue's `license` option |
+| `VITE_FIREBASE_API_KEY` | no | Firebase web app API key, used for Google sign-in |
+| `VITE_FIREBASE_AUTH_DOMAIN` | no | Firebase auth domain, used for Google sign-in |
+| `VITE_FIREBASE_PROJECT_ID` | no | Firebase project ID, used for Google sign-in |
+| `VITE_FIREBASE_APP_ID` | no | Firebase web app ID, used for Google sign-in |
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+The `VITE_FIREBASE_*` variables must be set together. If any of them is missing, the app runs without Firebase and requests are sent without a sign-in token.
 
 ## Project Setup
 
