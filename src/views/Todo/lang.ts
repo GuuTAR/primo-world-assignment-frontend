@@ -1,8 +1,8 @@
 import { LANGUAGE } from '@/enum/global'
 
 export const TITLE: Record<LANGUAGE, string> = {
-  [LANGUAGE.ENGLISH]: 'My tasks',
-  [LANGUAGE.THAI]: 'งานของฉัน',
+  [LANGUAGE.ENGLISH]: 'Todo',
+  [LANGUAGE.THAI]: 'รายการงาน',
 }
 
 export const GREETING: Record<LANGUAGE, string> = {

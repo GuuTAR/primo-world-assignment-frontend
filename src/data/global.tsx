@@ -28,8 +28,8 @@ export const MENU_ITEMS: { label: Record<LANGUAGE, string>; routeName: string; i
   },
   {
     label: {
-      [LANGUAGE.ENGLISH]: 'Todo',
-      [LANGUAGE.THAI]: 'รายการงาน',
+      [LANGUAGE.ENGLISH]: 'Todo (Not related)',
+      [LANGUAGE.THAI]: 'รายการงาน (ไม่เกี่ยวข้อง)',
     },
     routeName: 'todo',
     icon: 'pi pi-check-square',
