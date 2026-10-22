@@ -4,6 +4,7 @@ import Aura from '@primeuix/themes/aura'
 import { buttonTheme } from '@/theme/button'
 import { checkboxTheme } from '@/theme/checkbox'
 import { dividerTheme } from '@/theme/divider'
+import { dockTheme } from '@/theme/dock'
 import { inputTextTheme } from '@/theme/inputtext'
 import { sidebarTheme } from '@/theme/sidebar'
 import { textareaTheme } from '@/theme/textarea'
@@ -47,6 +48,7 @@ const preset = definePreset(Aura, {
   components: {
     button: buttonTheme,
     divider: dividerTheme,
+    dock: dockTheme,
     sidebar: sidebarTheme,
     toast: toastTheme,
     inputtext: inputTextTheme,
