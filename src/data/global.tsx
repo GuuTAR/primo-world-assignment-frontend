@@ -20,6 +20,14 @@ export const MENU_ITEMS: { label: Record<LANGUAGE, string>; routeName: string; i
   },
   {
     label: {
+      [LANGUAGE.ENGLISH]: 'Algorithm',
+      [LANGUAGE.THAI]: 'อัลกอริทึม',
+    },
+    routeName: 'algorithm',
+    icon: 'pi pi-sort-amount-up-alt',
+  },
+  {
+    label: {
       [LANGUAGE.ENGLISH]: 'Todo',
       [LANGUAGE.THAI]: 'รายการงาน',
     },

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import { useAuthStore } from '@/stores/auth'
 
+import AlgorithmView from '@/views/Algorithm/AlgorithmPage.vue'
 import LoginView from '@/views/Login/LoginPage.vue'
 import RsaView from '@/views/Rsa/RsaPage.vue'
 import TodoView from '@/views/Todo/TodoPage.vue'
@@ -13,6 +14,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: RsaView,
+      meta: { showMenu: true, requiresAuth: true },
+    },
+    {
+      path: '/algorithm',
+      name: 'algorithm',
+      component: AlgorithmView,
       meta: { showMenu: true, requiresAuth: true },
     },
     {
