@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import { useAuthStore } from '@/stores/auth'
 
+import EncryptView from '@/views/Encrypt/EncryptPage.vue'
 import LoginView from '@/views/Login/LoginPage.vue'
 import TodoView from '@/views/Todo/TodoPage.vue'
 
@@ -11,6 +12,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      component: EncryptView,
+      meta: { showMenu: true, requiresAuth: true },
+    },
+    {
+      path: '/todo',
+      name: 'todo',
       component: TodoView,
       meta: { showMenu: true, requiresAuth: true },
     },

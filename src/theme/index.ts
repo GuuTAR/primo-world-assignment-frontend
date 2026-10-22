@@ -6,6 +6,7 @@ import { checkboxTheme } from '@/theme/checkbox'
 import { dividerTheme } from '@/theme/divider'
 import { inputTextTheme } from '@/theme/inputtext'
 import { sidebarTheme } from '@/theme/sidebar'
+import { textareaTheme } from '@/theme/textarea'
 import { toastTheme } from '@/theme/toast'
 import { toggleButtonTheme } from '@/theme/togglebutton'
 
@@ -49,6 +50,7 @@ const preset = definePreset(Aura, {
     sidebar: sidebarTheme,
     toast: toastTheme,
     inputtext: inputTextTheme,
+    textarea: textareaTheme,
     togglebutton: toggleButtonTheme,
     checkbox: checkboxTheme,
   },
