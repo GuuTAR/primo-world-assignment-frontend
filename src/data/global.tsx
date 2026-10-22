@@ -20,8 +20,16 @@ export const MENU_ITEMS: { label: Record<LANGUAGE, string>; routeName: string; i
   },
   {
     label: {
-      [LANGUAGE.ENGLISH]: 'Todo',
-      [LANGUAGE.THAI]: 'รายการงาน',
+      [LANGUAGE.ENGLISH]: 'Algorithm',
+      [LANGUAGE.THAI]: 'อัลกอริทึม',
+    },
+    routeName: 'algorithm',
+    icon: 'pi pi-sort-amount-up-alt',
+  },
+  {
+    label: {
+      [LANGUAGE.ENGLISH]: 'Todo (Not related)',
+      [LANGUAGE.THAI]: 'รายการงาน (ไม่เกี่ยวข้อง)',
     },
     routeName: 'todo',
     icon: 'pi pi-check-square',
