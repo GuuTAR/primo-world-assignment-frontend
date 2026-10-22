@@ -1,11 +1,11 @@
 import { LANGUAGE } from '@/enum/global'
 
 export const APP_NAME: Record<LANGUAGE, string> = {
-  [LANGUAGE.ENGLISH]: 'Todo List',
-  [LANGUAGE.THAI]: 'Todo List',
+  [LANGUAGE.ENGLISH]: 'Primo World Assignment',
+  [LANGUAGE.THAI]: 'Primo World Assignment',
 }
 
 export const APP_DESCRIPTION: Record<LANGUAGE, string> = {
-  [LANGUAGE.ENGLISH]: 'Note your pending actions',
-  [LANGUAGE.THAI]: 'จดบันทึกสิ่งที่ต้องทำของคุณ',
+  [LANGUAGE.ENGLISH]: 'Interview Assignment for Fullstack Developer',
+  [LANGUAGE.THAI]: 'โจทย์สัมภาษณ์สำหรับตำแหน่ง Fullstack Developer',
 }

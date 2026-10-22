@@ -1,0 +1,21 @@
+import { LANGUAGE } from '@/enum/global'
+
+export const ENCRYPT_SUCCESS_MESSAGE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Payload encrypted successfully!',
+  [LANGUAGE.THAI]: 'เข้ารหัสข้อมูลสำเร็จ!',
+}
+
+export const ENCRYPT_FAILURE_MESSAGE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Failed to encrypt payload!',
+  [LANGUAGE.THAI]: 'เข้ารหัสข้อมูลไม่สำเร็จ!',
+}
+
+export const COPY_SUCCESS_MESSAGE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Copied to clipboard!',
+  [LANGUAGE.THAI]: 'คัดลอกแล้ว!',
+}
+
+export const COPY_FAILURE_MESSAGE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Failed to copy!',
+  [LANGUAGE.THAI]: 'คัดลอกไม่สำเร็จ!',
+}

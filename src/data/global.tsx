@@ -12,10 +12,18 @@ export const MOBILE_BREAKPOINT: number = 600
 export const MENU_ITEMS: { label: Record<LANGUAGE, string>; routeName: string; icon: string }[] = [
   {
     label: {
-      [LANGUAGE.ENGLISH]: 'Home',
-      [LANGUAGE.THAI]: 'หน้าแรก',
+      [LANGUAGE.ENGLISH]: 'Encryption',
+      [LANGUAGE.THAI]: 'เข้ารหัสข้อมูล',
     },
     routeName: 'home',
-    icon: 'pi pi-home',
+    icon: 'pi pi-lock',
+  },
+  {
+    label: {
+      [LANGUAGE.ENGLISH]: 'Todo',
+      [LANGUAGE.THAI]: 'รายการงาน',
+    },
+    routeName: 'todo',
+    icon: 'pi pi-check-square',
   },
 ]
